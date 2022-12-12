@@ -97,7 +97,7 @@ int main (int argc, char *argv[])
     signal(SIGINT, handle_sigint);
 
     /* calculate tree dimensions */
-    col = (w.ws_col/2) + 1;
+    col = (w.ws_row - MAX_STUMP_SZ) * 2;
     total = add_all_odd(col);
     row = (int)sqrt(total);
     ssz = calc_stump(col);
